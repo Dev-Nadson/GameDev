@@ -1,26 +1,47 @@
 extends CharacterBody2D
 
 @export_category("Variables")
-@export var velocidade: float = 64.0 #Declarando a velocidade
+@export var velocidade: float = 64.0
 @export var aceleracao: float = 1.0
 @export var atrito: float = 1.0
-	
-func andar() -> void: #Função movimento
-	var direcao: Vector2 = Vector2(
-		Input.get_axis("move_left", "move_right"), #Controles WASD E Setinhas
-		Input.get_axis("move_up", "move_down")
-	)
-	print(direcao) #Printa no terminal
-	
-	if direcao != Vector2.ZERO: #quando estiver em movimento
-		velocity.x = lerp(velocity.x, direcao.normalized().x * velocidade, aceleracao)
-		velocity.y = lerp(velocity.y, direcao.normalized().y * velocidade, aceleracao)
-		return
-	velocity.x = lerp(velocity.x, direcao.normalized().x * velocidade, atrito)
-	velocity.y = lerp(velocity.y, direcao.normalized().y * velocidade, atrito)
-	velocity = direcao.normalized() * velocidade #Velocity é palavra reservada
 
-	
-func _physics_process(_delta: float) -> void: #Seria a "Main"
-	andar() 
-	move_and_slide() #para mover de forma suave
+var ultima_direcao: Vector2 = Vector2.DOWN
+@onready var animation_player: AnimationPlayer = $AnimationP
+
+func andar() -> void:
+	var direcao = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+
+	if direcao != Vector2.ZERO:
+		ultima_direcao = direcao.normalized()
+		var alvo = ultima_direcao * velocidade
+		velocity.x = lerp(velocity.x, alvo.x, aceleracao)
+		velocity.y = lerp(velocity.y, alvo.y, aceleracao)
+		if abs(ultima_direcao.x) > abs(ultima_direcao.y):
+			if ultima_direcao.x > 0:
+				animation_player.play("Idle_Down")
+			else:
+				animation_player.play("Idle_Up")
+		else:
+			if ultima_direcao.y > 0:
+				animation_player.play("Idle_Left")
+			else:
+				animation_player.play("Idle_Right")
+	else:
+		velocity.x = lerp(velocity.x, 0.0, atrito)
+		velocity.y = lerp(velocity.y, 0.0, atrito)
+
+		# Tocar animação idle com base na última direção
+		if abs(ultima_direcao.x) > abs(ultima_direcao.y):
+			if ultima_direcao.x > 0:
+				animation_player.play("Idle_Left")
+			else:
+				animation_player.play("Idle_Right")
+		else:
+			if ultima_direcao.y > 0:
+				animation_player.play("Idle_Down")
+			else:
+				animation_player.play("Idle_Up")
+
+func _physics_process(_delta: float) -> void:
+	andar()
+	move_and_slide()
