@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wr0nay7fv33a"
-path="res://.godot/imported/Tileset_48x48_9.png-f6abbbbe694da7e620b7b7ec32a23d9b.ctex"
+uid="uid://02xwt027mw5i"
+path="res://.godot/imported/Sprt_Franciel_All.png-06bcb23da59d6f58c570bfc2761b48b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Modern tiles_Free/Old/Tileset_48x48_9.png"
-dest_files=["res://.godot/imported/Tileset_48x48_9.png-f6abbbbe694da7e620b7b7ec32a23d9b.ctex"]
+source_file="res://Sprites/Sprt_Franciel_All.png"
+dest_files=["res://.godot/imported/Sprt_Franciel_All.png-06bcb23da59d6f58c570bfc2761b48b1.ctex"]
 
 [params]
 

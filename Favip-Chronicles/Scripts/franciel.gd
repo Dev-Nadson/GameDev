@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var atrito: float = 1.0
 
 var ultima_direcao: Vector2 = Vector2.DOWN
-@onready var animation_player: AnimationPlayer = $AnimationP
+@onready var animation_player: AnimationPlayer = $AnimationFranciel
 
 func andar() -> void:
 	var direcao = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -18,14 +18,14 @@ func andar() -> void:
 		velocity.y = lerp(velocity.y, alvo.y, aceleracao)
 		if abs(ultima_direcao.x) > abs(ultima_direcao.y):
 			if ultima_direcao.x > 0:
-				animation_player.play("Idle_Down")
+				animation_player.play("Move_Right")
 			else:
-				animation_player.play("Idle_Up")
+				animation_player.play("Move_Left")
 		else:
 			if ultima_direcao.y > 0:
-				animation_player.play("Idle_Left")
+				animation_player.play("Move_Down")
 			else:
-				animation_player.play("Idle_Right")
+				animation_player.play("Move_Up")
 	else:
 		velocity.x = lerp(velocity.x, 0.0, atrito)
 		velocity.y = lerp(velocity.y, 0.0, atrito)
@@ -33,15 +33,15 @@ func andar() -> void:
 		# Tocar animação idle com base na última direção
 		if abs(ultima_direcao.x) > abs(ultima_direcao.y):
 			if ultima_direcao.x > 0:
-				animation_player.play("Idle_Left")
+				animation_player.play("Idle_Down")
 			else:
-				animation_player.play("Idle_Right")
+				animation_player.play("Idle_Down")
 		else:
 			if ultima_direcao.y > 0:
 				animation_player.play("Idle_Down")
 			else:
 				animation_player.play("Idle_Up")
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void: # "Main"
 	andar()
 	move_and_slide()

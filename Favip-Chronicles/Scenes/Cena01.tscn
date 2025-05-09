@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://cc5fpafs78rky"]
+[gd_scene load_steps=12 format=3 uid="uid://cc5fpafs78rky"]
 
-[ext_resource type="Texture2D" uid="uid://cvpcjdelmteoj" path="res://Sprites/Modern tiles_Free/Characters_free/Alex_16x16.png" id="1_etg66"]
 [ext_resource type="Script" uid="uid://cqrvfnyemhmbj" path="res://Scripts/franciel.gd" id="1_kcxqt"]
+[ext_resource type="Texture2D" uid="uid://02xwt027mw5i" path="res://Sprites/Sprt_Franciel_All.png" id="2_kcxqt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_etg66"]
 size = Vector2(9.5, 3.5)
 
-[sub_resource type="Animation" id="Animation_lnbfa"]
+[sub_resource type="Animation" id="Animation_kcxqt"]
 resource_name = "Idle_Down"
 length = 0.6
 loop_mode = 1
@@ -17,10 +17,10 @@ tracks/0/path = NodePath("Sprt_Franciel:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.333333, 0.433333, 0.533333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0333333, 0.133333, 0.233333, 0.333333, 0.433333, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [42, 43, 44, 45, 46, 47]
+"values": [42, 43, 44, 45, 46, 47, 47]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -37,20 +37,20 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprt_Franciel:offset")
+tracks/2/path = NodePath("Sprt_Franciel:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, -16)]
 }
 
-[sub_resource type="Animation" id="Animation_kcxqt"]
-resource_name = "Idle_Left"
+[sub_resource type="Animation" id="Animation_turc5"]
+resource_name = "Idle_Up"
 length = 0.6
-loop_mode = 2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -58,40 +58,40 @@ tracks/0/path = NodePath("Sprt_Franciel:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.333333, 0.433333, 0.533333),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.433333, 0.566667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [24, 25, 26, 27, 28, 29]
+"values": [30, 31, 32, 33, 34, 35]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprt_Franciel:flip_h")
+tracks/1/path = NodePath("Sprt_Franciel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(0, -16)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprt_Franciel:offset")
+tracks/2/path = NodePath("Sprt_Franciel:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.5, 0)]
+"update": 1,
+"values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_ji48o"]
-resource_name = "Idle_Right"
+[sub_resource type="Animation" id="Animation_puf3m"]
+resource_name = "Move_Down"
 length = 0.6
-loop_mode = 2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -99,10 +99,51 @@ tracks/0/path = NodePath("Sprt_Franciel:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.333333, 0.433333, 0.533333),
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.333333, 0.433333, 0.566667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [24, 25, 26, 27, 28, 29]
+"values": [66, 67, 68, 69, 70, 71]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprt_Franciel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprt_Franciel:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lnbfa"]
+resource_name = "Move_Left"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprt_Franciel:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.333333, 0.433333, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [48, 49, 50, 51, 52, 53]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -119,18 +160,18 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprt_Franciel:offset")
+tracks/2/path = NodePath("Sprt_Franciel:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-0.5, 0)]
+"values": [Vector2(0, -16)]
 }
 
-[sub_resource type="Animation" id="Animation_turc5"]
-resource_name = "Idle_Up"
+[sub_resource type="Animation" id="Animation_ji48o"]
+resource_name = "Move_Right"
 length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
@@ -140,61 +181,22 @@ tracks/0/path = NodePath("Sprt_Franciel:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.333333, 0.433333, 0.533333),
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.333333, 0.433333, 0.566667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [30, 31, 32, 33, 34, 35]
+"values": [48, 49, 50, 51, 52, 53]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprt_Franciel:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.6),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprt_Franciel:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_53lg3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprt_Franciel:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [24]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprt_Franciel:offset")
+tracks/1/path = NodePath("Sprt_Franciel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0, -16)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -209,34 +211,115 @@ tracks/2/keys = {
 "values": [false]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_puf3m"]
+[sub_resource type="Animation" id="Animation_6oxq6"]
+resource_name = "Move_Up"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprt_Franciel:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.333333, 0.433333, 0.566667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [54, 55, 56, 57, 58, 59]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprt_Franciel:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprt_Franciel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -16)]
+}
+
+[sub_resource type="Animation" id="Animation_53lg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprt_Franciel:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [42]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprt_Franciel:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprt_Franciel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ji48o"]
 _data = {
-&"Idle_Down": SubResource("Animation_lnbfa"),
-&"Idle_Left": SubResource("Animation_kcxqt"),
-&"Idle_Right": SubResource("Animation_ji48o"),
+&"Idle_Down": SubResource("Animation_kcxqt"),
 &"Idle_Up": SubResource("Animation_turc5"),
+&"Move_Down": SubResource("Animation_puf3m"),
+&"Move_Left": SubResource("Animation_lnbfa"),
+&"Move_Right": SubResource("Animation_ji48o"),
+&"Move_Up": SubResource("Animation_6oxq6"),
 &"RESET": SubResource("Animation_53lg3")
 }
 
 [node name="MainScene" type="Node2D"]
 
 [node name="Franciel" type="CharacterBody2D" parent="."]
-position = Vector2(0, -1)
 script = ExtResource("1_kcxqt")
 
 [node name="Sprt_Franciel" type="Sprite2D" parent="Franciel"]
 position = Vector2(0, -16)
-texture = ExtResource("1_etg66")
+texture = ExtResource("2_kcxqt")
 hframes = 24
 vframes = 7
-frame = 24
+frame = 42
 
 [node name="Cls_Franciel" type="CollisionShape2D" parent="Franciel"]
 show_behind_parent = true
-position = Vector2(0.25, 0)
 shape = SubResource("RectangleShape2D_etg66")
 
-[node name="AnimationP" type="AnimationPlayer" parent="Franciel"]
+[node name="AnimationFranciel" type="AnimationPlayer" parent="Franciel"]
 libraries = {
-&"": SubResource("AnimationLibrary_puf3m")
+&"": SubResource("AnimationLibrary_ji48o")
 }
+autoplay = "Idle_Up"
